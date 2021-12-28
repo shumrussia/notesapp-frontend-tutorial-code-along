@@ -1,0 +1,4 @@
+1. What is repository pattern?
+https://thorben-janssen.com/hibernate-getting-started/
+https://thorben-janssen.com/implementing-the-repository-pattern-with-jpa-and-hibernate/
+https://thorben-janssen.com/what-is-spring-data-jpa-and-why-should-you-use-it/
