@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useHistory } from "react-router-dom";
 import NotesService from "../services/NotesService";
 
 const NoteDetails = () => {
     const {id} = useParams();
     const[currentNote, setCurrentNote] = useState('');
+    const history = useHistory();
 
     useEffect(() => {
         NotesService.get(id)
@@ -16,6 +18,15 @@ const NoteDetails = () => {
             })
     }, []);
 
+    const handleDelete = () => {
+        NotesService.remove(id)
+                    .then(response =>{
+                        history.push("/");
+                    })
+                    .catch(error => {
+                        console.log("Something went wrong", error);
+                    })
+    }
     return (  
         <div className="note-details main-content">
             <article>
@@ -26,6 +37,7 @@ const NoteDetails = () => {
                 </div>
                 <div className="mb-3">{currentNote.body}</div>
             </article>
+            <button onClick={handleDelete}>Delete</button>
         </div>
     );
 }
