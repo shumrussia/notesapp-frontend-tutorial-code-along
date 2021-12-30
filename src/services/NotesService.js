@@ -13,7 +13,7 @@ const get = id => {
 }
 
 const remove = id => {
-    return httpClient.delete(`/notes/${id}`)
+    return httpClient.delete(`/notes/${id}`);
 }
 
 export default { getAll, create, get, remove };

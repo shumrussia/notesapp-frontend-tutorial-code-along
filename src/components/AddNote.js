@@ -24,7 +24,6 @@ const AddNote = () => {
     return (
         <div className="create">
             <form>
-
                 <div className="form-group">
 
                     <label htmlFor="title">Note Title: <sup>*</sup></label>
@@ -64,7 +63,7 @@ const AddNote = () => {
 
                 </div>
                 <div className="text-center">
-                    <button onClick={(e) => saveNote(e)}>Add note</button>
+                    <button onClick={(e) => saveNote(e)}>Add Note</button>
                 </div>
             </form>
         </div>
