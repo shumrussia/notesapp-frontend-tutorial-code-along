@@ -9,6 +9,7 @@ const create = data => {
 }
 
 const get = id => {
-    return httpClient.get(`notes/${id}`);
+    return httpClient.get(`/notes/${id}`);
 }
+
 export default { getAll, create, get };

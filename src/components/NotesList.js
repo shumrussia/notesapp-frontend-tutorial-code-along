@@ -29,7 +29,7 @@ const NotesList = () => {
                                 <p>{note.body}</p>
                             </Link>
                         </div>
-                    )) : <div>No notes are available</div>
+                    )) : <div>No notes available</div>
                 }
             </div>
         </div>
