@@ -17,6 +17,10 @@ const NoteDetails = () => {
             })
     }, []);
 
+    const handleEdit = (e) => {
+        history.push(`/notes/edit/${id}`);
+    }
+
     const handleDelete = () => {
         NotesService.remove(id)
             .then(response => {
@@ -37,7 +41,8 @@ const NoteDetails = () => {
                 </div>
                 <div className="mb-3">{currentNote.body}</div>
             </article>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleEdit}>Edit</button>
+            <button onClick={handleDelete} className="ml-3">Delete</button>
         </div>
     );
 }
