@@ -7,6 +7,7 @@ const AddNote = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [category, setCategory] = useState('programming');
+    const [errors, setErrors] = useState(false);
     const history = useHistory();
     const { id } = useParams();
 
@@ -26,6 +27,10 @@ const AddNote = () => {
 
     const saveNote = (e) => {
         e.preventDefault();
+        if (!title || !body) {
+            setErrors(true);
+            return;
+        }
         const note = {title, body, category, id};
         if (id) {
             NotesService.update(note)
@@ -52,6 +57,7 @@ const AddNote = () => {
         <div className="create">
             <div className="text-center">
                 <h5>{id ? "Update note" : "Add a new note"}</h5>
+                {errors && <span style={{color:'red', fontStyle:'italic'}}>Please enter the mandatory fields</span>}
             </div>
             <form>
                 <div className="form-group">
