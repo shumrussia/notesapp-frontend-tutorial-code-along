@@ -26,7 +26,7 @@ const AddNote = () => {
 
     const saveNote = (e) => {
         e.preventDefault();
-        const note = { title, body, category, id };
+        const note = {title, body, category, id};
         if (id) {
             NotesService.update(note)
                         .then(response => {
